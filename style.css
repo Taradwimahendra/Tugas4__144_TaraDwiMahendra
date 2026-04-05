@@ -1,0 +1,178 @@
+/* --- RESET & GLOBAL STYLES --- */
+* {
+    box-sizing: border-box;
+    /* Transisi halus untuk semua efek hover */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body {
+    background-color: #0d0d0d;
+    /* Background gradasi gelap yang elegan */
+    background-image: radial-gradient(circle at top right, #1a0b12, #0d0d0d);
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mengetengahkan semua konten di body */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- HEADER SECTION (TENGAH PRESISI) --- */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mengetengahkan teks secara horizontal */
+    justify-content: center;
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+}
+
+#judul {
+    font-size: clamp(2rem, 8vw, 4rem); /* Ukuran responsif */
+    font-weight: 900;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: 15px; /* Memberikan kesan premium/editorial */
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 20, 147, 0.6); /* Glow Neon Pink */
+    /* Kompensasi letter-spacing agar benar-benar di tengah */
+    padding-left: 15px; 
+}
+
+#sub-judul {
+    color: #ff1493; /* Neon Pink */
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- GRID LAYOUT & GROUPING --- */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 20px 100px;
+    width: 100%;
+}
+
+.member-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/* --- CARD GLASSMORPHISM STYLE --- */
+table {
+    background: rgba(255, 255, 255, 0.03); /* Transparansi */
+    backdrop-filter: blur(15px); /* Efek blur kaca */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    overflow: hidden;
+    width: 420px; /* Lebar ideal untuk menampung biodata */
+    border-collapse: collapse;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+table:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: #ff1493;
+    box-shadow: 0 0 40px rgba(255, 20, 147, 0.3);
+}
+
+.header-row {
+    background: rgba(255, 20, 147, 0.85); /* Header tabel pink glass */
+}
+
+#jdl {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 800;
+    margin: 15px;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* --- VIDEO STYLING (16:9) --- */
+.member-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.8) grayscale(20%);
+}
+
+table:hover .member-video {
+    filter: brightness(1.1) grayscale(0%);
+}
+
+/* --- CONTENT ALIGNMENT (SEJAJAR ATAS) --- */
+.content-row td {
+    vertical-align: top; /* Memaksa teks label & data sejajar di atas */
+    padding: 35px 25px;
+}
+
+.left-div {
+    width: 130px; /* Lebar kolom label agar tidak bertumpuk */
+}
+
+/* --- LABELS & DATA TEXT --- */
+#member {
+    color: #ff1493;
+    font-weight: 800;
+    font-size: 0.7rem;
+    line-height: 2.8; /* Menjaga jarak antar baris tetap presisi */
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+#mnama, #mposisi, #mtgl, #msub {
+    color: #e0e0e0;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 2.3; /* Sedikit lebih rapat dari label untuk estetika */
+    font-size: 0.85rem;
+    margin: 0;
+    display: block;
+}
+
+#mnama {
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+#mnama:hover {
+    color: #ff1493;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE (MOBILE FRIENDLY) --- */
+@media screen and (max-width: 900px) {
+    .member-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    table {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    #judul {
+        letter-spacing: 8px;
+        font-size: 2.5rem;
+    }
+}
